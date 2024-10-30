@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Petition</title>
+    <style>
+        /* Add basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #signature-pad {
+            border: 1px solid #ccc;
+            height: 150px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Petition</h1>
+    <form action="submit.php" method="POST" onsubmit="return handleSubmit()">
+        <label for="name">Name:</label>
+        <div>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+        </div>
+
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" placeholder="ex: myname@example.com" required>
+
+        <label for="signature">Signature:</label>
+        <div id="signature-pad"></div>
+        <input type="hidden" name="signature_data" id="signature-data">
+
+        <label for="comments">Comments:</label>
+        <textarea name="comments" rows="4" placeholder="Your comments"></textarea>
+
+        <button type="submit">Join</button>
+    </form>
+
+    <script src="signature_pad.min.js"></script> <!-- Include Signature Pad JS -->
+    <script>
+        // Initialize signature pad
+        var signaturePad = new SignaturePad(document.getElementById('signature-pad'));
+
+        // Function to handle form submission
+        function handleSubmit() {
+            var signatureData = signaturePad.toDataURL(); // Get signature data as base64
+            document.getElementById('signature-data').value = signatureData; // Set hidden input value
+            return true;
+        }
+    </script>
+</body>
+</html>
