@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petition to the Dean</title>
+    <link rel="stylesheet" href="alex.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Vistula University Logo">
+            </div>
+            <div class="university-details">
+                <h2>Tharaka University<br>Online Petition System </h2>
+            </div>
+            <div class="location">
+                <p>Date:</p>
+                <p>Place: Tharaka</p>
+            </div>
+        </div>
+
+        <h3>Petition to the Dean</h3>
+
+        <!-- Updated form tag -->
+        <form id="petitionForm" action="petition.php" method="POST">
+            <label>Name and Surname:</label>
+            <input type="text" name="name" required>
+
+            <label>Student ID number:</label>
+            <input type="text" name="student_id" required>
+
+            <label>E-mail address:</label>
+            <input type="email" name="email" required>
+
+            <label>Phone number:</label>
+            <input type="tel" name="phone">
+
+            <label>Language of instruction:</label>
+            <select name="language">
+                <option value="English">English</option>
+                <option value="Polish">Polish</option>
+            </select>
+
+            <label>Semester:</label>
+            <select name="semester">
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+            </select>
+
+            <label>Year:</label>
+            <input type="text" name="year" required>
+
+            <h4>I kindly request you to accept me for the ...</h4>
+
+            <label>Semester (nd/rd/th):</label>
+            <input type="text" name="semester_number" required>
+
+            <label>Program Type:</label>
+            <select name="program_type">
+                <option value="Bachelor">Bachelor</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Master">Master</option>
+            </select>
+
+            <label>Study Mode:</label>
+            <select name="study_mode">
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+            </select>
+
+            <label>Program Name:</label>
+            <input type="text" name="program_name" required>
+
+            <label>University Name:</label>
+            <input type="text" name="university_name" required>
+
+            <label>Faculty:</label>
+            <input type="text" name="faculty" required>
+
+            <label>Specialization:</label>
+            <input type="text" name="specialization" required>
+
+            <div class="checkbox-group">
+                <input type="checkbox" name="permission" value="1">
+                <label>I’ve got Dean’s permission from the previous University for transfer – please, find it in attachment</label><br>
+
+                <input type="checkbox" name="resignation" value="1">
+                <label>I’ve resigned from the studies at the Previous University</label><br>
+
+                <input type="checkbox" name="crossed_out" value="1">
+                <label>I’ve been crossed out from the list of students on ... due to ...</label>
+            </div>
+
+            <label>Total Semesters Passed:</label>
+            <input type="text" name="semesters_passed" required>
+
+            <p>Please find in attachment my transcript of records.</p>
+
+            <div class="signatures">
+                <div>
+                    <label>Date and Receiver’s signature:</label>
+                    <input type="text" name="receiver_signature">
+                </div>
+                <div>
+                    <label>Student’s signature:</label>
+                    <input type="text" name="student_signature">
+                </div>
+            </div>
+
+            <h4>Dean’s Decision</h4>
+
+            <p>I agree / disagree* to accept the student for the ... semester in academic year ... on the basis of completed ... semesters during ... academic years and obtained ... ECTS credits. The student is obliged to pass the academic differences listed in attachment.</p>
+
+            <label>Date and Dean’s signature:</label>
+            <input type="text" name="dean_signature">
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
